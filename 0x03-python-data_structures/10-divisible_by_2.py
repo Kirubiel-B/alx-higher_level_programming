@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 10-divisible_by_2.py
+# kb
 
 
 def divisible_by_2(my_list=[]):
