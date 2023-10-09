@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 2-replace_in_list.py
+# kb
 
 
 def replace_in_list(my_list, idx, element):
