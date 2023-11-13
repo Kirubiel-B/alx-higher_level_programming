@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unit test for square.py file
+"""Unittest for square.py file
 """
 import unittest
 from models.base import Base
@@ -12,6 +12,7 @@ from io import StringIO
 class Test_square(unittest.TestCase):
     """Defines a class to evaluate diferent test cases for square.py file
     """
+
     def test_instance_class(self):
         """Checks for a instance of the class
         """
