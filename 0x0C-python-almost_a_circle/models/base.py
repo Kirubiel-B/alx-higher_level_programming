@@ -9,6 +9,7 @@ import turtle
 class Base:
     """Defines a base class"""
     __nb_objects = 0
+    
     def __init__(self, id=None):
         """Method that assign the public instance attribute id
         Args:
