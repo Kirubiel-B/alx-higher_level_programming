@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unittest for base.py file
+"""Unit test for base.py file
 """
 import unittest
 from models.base import Base
@@ -10,7 +10,6 @@ import os
 
 class Test_Base(unittest.TestCase):
     """Defines a class to evaluate diferent test cases for base.py file"""
-
     def test_instance_type_id_class(self):
         """Checks for a instance of the class
         """

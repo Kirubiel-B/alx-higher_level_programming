@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unittest for rectangle.py file
+"""Unit test for rectangle.py file
 """
 import unittest
 from models.base import Base
@@ -11,7 +11,6 @@ from io import StringIO
 class Test_rectangle(unittest.TestCase):
     """Defines a class to evaluate diferent test cases for rectangle.py file
     """
-
     def test_instance_class(self):
         """Checks for a instance of the class
         """

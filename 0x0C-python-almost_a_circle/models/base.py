@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""Module base"""
 import json
 import csv
 from collections import OrderedDict
@@ -7,11 +6,11 @@ import turtle
 
 
 class Base:
-    """Defines a base class"""
+    """Defines base class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Method that assign the public instance attribute id
+        """assign the public instance attribute id
         Args:
            id(int): integer value to manage id in this project
         Return:
@@ -25,7 +24,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Method that returns the JSON
+        """returns the JSON
            string representation
         Args:
            list_dictionaries(dict): List of dictionaries
@@ -40,7 +39,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Method that writes the JSON string representation
+        """ writes the JSON string representation
             of list_objs to a file
         Args:
             list_objs(list): List of objects
@@ -62,7 +61,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Method that returns the list of the
+        """returns the list of the
            JSON string representation
         Args:
            json_string: JSON string
@@ -75,7 +74,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Update the class Base and returns a instance with all
+        """ Method update the class Base and returns a instance with all
            attributes already set
         Args:
            dictionary: Dictionary with all attributes of the object
@@ -91,7 +90,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Method that returns a list of instances
+        """returns a list of instances
            - the type of these instances depends on cls
         """
         filename = "{}.json".format(cls.__name__)
@@ -109,7 +108,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Method that serializes in CSV
+        """ serializes in CSV
         Args:
            list_objs(list): List of objects
         Return:
@@ -136,7 +135,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Method that deserializes in CSV
+        """deserializes in CSV
         """
         filename = "{}.csv".format(cls.__name__)
         instance_list = []
@@ -155,35 +154,35 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Method that draws the shape with turtle module
+        """draws the shape with turtle module
         Args:
            list_squares(list): List of square objects
            list_rectangles(list): List of rectangle objects
         Return:
            Always nothing
         """
-        # Open screen and set the turtle in the center
+        # Open the screen and set the turtle in the center
         s = turtle.getscreen()
         t = turtle.Turtle()
 
         # Add a title to my screen
         turtle.title("My first draw with python and tutle module")
 
-        # Customize turtle and screen background
+        # Customize the turtle and screen background
         t.shape("turtle")
         turtle.bgcolor("black")
 
-        # Customize pen for rectangle
+        # Customize the pen for rectangle
         t.pen(pencolor="blue", fillcolor="white", pensize=5, speed=1)
-        # Extract the data from the instance rectangle list
+        # Extract data from the instance rectangle list
         for instance in list_rectangles:
-            # Customize pen for rectangle
+            # Customize the pen for rectangle
             t.pen(pencolor="blue", fillcolor="white", pensize=5, speed=1)
             data = instance.to_dictionary()
-            # Set the position acording the rectangle object
+            # Set position acording the rectangle object
             t.home()
             t.setpos(data['x'], data['y'])
-            # Draw process
+            # Draws process
             t.pd()
             for i in range(2):
                 t.forward(data['width'])
@@ -192,20 +191,20 @@ class Base:
                 t.left(90)
             t.pu()
 
-        # Customize pen for square
+        # Customize the pen for square
         t.pen(pencolor="red", fillcolor="white", pensize=5, speed=0.5)
-        # Extract the data from the instance square list
+        # Extract data from the instance square list
         for instance in list_squares:
             data = instance.to_dictionary()
-            # Set the position acording the square object
+            # Set position acording the square object
             t.home()
             t.setpos(data['x'], data['y'])
-            # Draw process
+            # Draw a process
             t.pd()
             for i in range(4):
                 t.forward(data['size'])
                 t.left(90)
             t.pu()
 
-        # Keeps window open
+        # Keep's window open
         turtle.getscreen()._root.mainloop()

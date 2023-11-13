@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""Defines a rectangle module (modules.rectangle)"""
+"""Defines a rectangle(modules.rectangle)"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Defines a rectangle class"""
-
+    """Defines rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Method that init values for a rectangle object
+        """Method init values for a rectangle object
         Args:
            width:size of the width
            height: size of the height
